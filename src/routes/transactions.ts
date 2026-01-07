@@ -59,9 +59,9 @@ export async function transactionsRoutes(app: FastifyInstance) {
           reply.code(404).send({ message: 'Transaction not found' });
         }
 
-        return reply.code(200).send({
+        return {
           transaction: transactionFind,
-        });
+        };
 
       } catch (err) {
         console.error(err);
